@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Foodball Player In The World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                penguin:'#FFFBF0',
+                price:'#FABE4C'
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <header class="container-full">
+        <div class="bg-black" >
+            <h1 class="text-4xl py-6 text-center  font-bold text-pink-500">Best Foodball Player In The World</h1>
+            <p class="text-2xl text-white text-center font-medium">Lorem, ipsum dolor sit amet consectetur  adipisicing elit. Modi illum <br> consequuntur unde neque non aspernatur magni veniam debitis nemo quos!</p>
+            <img class="w-1/2 mx-auto" src="images/messi-removebg-preview.png" alt="">
+        </div>
+    </header>
+
+    <main class="container mx-auto bg-[#E5E5E5]">
+        <section class="py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+                <!-- palyer 1 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/nayemar.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Nayemar</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- Player 2 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/lautro martinez.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Martinez</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- player 3 -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/embappe.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Mbappe</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+
+                <!--  select v  -->
+                <div class="bg-yellow-50">
+                    <h1 class="text-2xl font-medium text-center  mt-3">Select-V</h1>
+                    <p id="player-number"> </p>
+                    <!-- <table>
+                        <tbody id="player-table">
+
+                        </tbody>
+                    </table> -->
+                    <ol class="text-2xl text-center">
+                        <li  id="player-table">
+
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- player 4  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/messi.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Messi</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- player 5  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/karim benjama.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Karim Benzama</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+                <!-- palyer 6  -->
+                <div class="bg-black rounded-lg">
+                    <img class="rounded-lg h-60" src="images/vensius.png" alt="">
+                    <h2 class="text-3xl text-center text-white mt-3">Vensius</h2>
+                    <button onclick="listenMe(this)" class="text-2xl bg-blue-500 px-12 py-2 rounded-lg mt-6 mx-16 mb-4">Select</button>
+                </div>
+
+
+                <!-- Budget field  -->
+                <div class="bg-black row-span-2">
+                    <h1 class="text-3xl text-white text-center mt-3">Budget</h1>
+                    <!-- Par Player  -->
+                    <p class="text-2xl  text-white mx-5 mb-1 mt-4">Par Player :</p>
+                    <input id="parPlayer-field" class="p-1 mx-5 mt-3 text-center" type="text">
+                    <!-- Calculate button  -->
+                    <button id="calculate-field" class="text-2xl bg-blue-500 px-20 mx-4 py-1 rounded-lg mt-8">Calculate</button>
+                    <!-- Player expenses  -->
+                    <p class="text-white  text-2xl mx-6 mt-6"><strong>Player Expenses : </strong> $<span>00</span></p>
+                    <!-- Manger  -->
+                    <p class="text-white mt-4 mx-6 text-2xl">Manager :</p>
+                    <input type="text" name="" id="" class="p-1 mt-4 mx-5 text-center">
+                    <!-- Coach -->
+                    <p class="text-white text-2xl mx-6 mt-2">Coach :</p>
+                    <input type="text" class="p-1 mt-4 text-center mx-5">
+                    <!-- Calculate Total  -->
+                    <button id="calculate-total-field" class="text-2xl bg-blue-500 px-20 mx-4 py-1 rounded-lg mt-8">Calculate Total</button>
+                    <!-- total  -->
+                    <p class="text-white  text-2xl mx-6 mt-8 text-center"><strong>Total : </strong> $<span>00</span></p>
+
+                    <img class="mt-6" src="images/ball.png" alt="">
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/select-v.js"></script>
+    <script src="js/budget.js"></script>
+</body>
+</html>
