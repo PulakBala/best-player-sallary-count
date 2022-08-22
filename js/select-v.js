@@ -1,59 +1,46 @@
-const playerArray = [];
 
-function selectPlayer() 
-{
-
+const players = [];
+const btns = document.querySelectorAll('#select-btn')
+// console.log(btns);
+function makeList() {
     const OrderPlayerlist = document.getElementById('player-table');
     OrderPlayerlist.innerHTML = ''; 
-    if(playerArray.length < 6){
-        for(let i = 0; i <= playerArray.length; i++) {
-            const name = playerArray[i];
-    
-            const li = document.createElement('li');
-    
-            li.innerHTML = `
-                <ol>${i + 1}.</ol>
-                <li class = "mb-2">${name}</li>       
-            `;
-    
-            OrderPlayerlist.appendChild(li);
-        }
-    }else{
-        for(let i = 0; i < 5; i++) {
-            const name = playerArray[i];
-    
-            const li = document.createElement('li');
-    
-            li.innerHTML = `
-                <ol>${i + 1}.</ol>
-                <li class = "mb-2">${name}</li>       
-            `;
-    
-            OrderPlayerlist.appendChild(li);
-        }
+    for (let i = 0; i < players.length; i++) {
+        const name = players[i];
+
+        const li = document.createElement('li');
+
+        li.innerHTML = `
+            <ol>${i + 1}.</ol>
+            <li class = "mb-2">${name}</li>       
+        `;
+
+        OrderPlayerlist.appendChild(li);
     }
-   
-
+}
+function displayPlayers() {
+    // console.log('right now length ' + players.length);
+    if (players.length <= 5) {
+        makeList();
+    } else {
+        alert('more than 5');
+        players.pop();
+        makeList();
+    }
 }
 
-function renderList(){
-    console.log(`inside renderList: ${playerArray.length}`);
 
-    const OrderPlayerlist = document.getElementById('player-table');
-    const list = document.createElement('li');
-
-
-
+for (let i = 0; i < btns.length; i++) {
+    // console.log(btns[i]);
+    btns[i].addEventListener('click', () => {
+        const playerName = btns[i].parentNode.children[1].innerText;
+        players.push(playerName);
+        displayPlayers();
+    })
 }
 
-
-function addToCard(player, callback)
-{
-    console.log(player);
-    const playerName = player.parentNode.children[1].innerText;
-    callback();    
-}
-
-function listenMe(player){
-    addToCard(player, selectPlayer);
-}
+// document.getElementById('calculate-field').addEventListener('click', function(){
+//     const parPlayerInputValue = document.getElementById('parPlayer-field').value;
+//     const calculatePlayerSalary = parPlayerInputValue * players.length;
+//     // console.log(calculatePlayerSalary); 
+// })
